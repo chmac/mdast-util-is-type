@@ -1,6 +1,13 @@
-export const sum = (a: number, b: number) => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('boop');
-  }
-  return a + b;
+import { List, ListItem, Heading } from 'mdast';
+
+export const isListItem = (node: any): node is ListItem => {
+  return node.type === 'listItem';
+};
+
+export const isList = (node: any): node is List => {
+  return node.type === 'list';
+};
+
+export const isHeading = (node: any): node is Heading => {
+  return node.type === 'heading';
 };
